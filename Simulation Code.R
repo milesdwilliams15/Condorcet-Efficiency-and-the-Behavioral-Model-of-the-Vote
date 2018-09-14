@@ -20,7 +20,7 @@ x <- times(25001) %do% {
 k <- c(.39,.47,.71)
 df <- data.frame(voter=sort(rep(1:25001,len=length(x))),
                  cand=rep(c('A','B','C'),len=length(x)),
-                 ideal_voter=rep(x,len=length(x)),
+                 ideal_voter=x,
                  ideal_cand=rep(k,len=length(x)),
                  noise=exp(-exp(-rnorm(length(x),sd=sqrt(0.7),
                                        mean=0.6))) ) %>% 
